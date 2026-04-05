@@ -30,20 +30,20 @@ Dockerizovaný Call of Duty 2 dedicated server s podporou CoD2x knihovny a oprav
 ### cod2server (základní)
 - Mapuje `./main` → `/home/cod2/main`
 - Načítá `server.cfg`
-- Port 28976 TCP/UDP
+- Port `28976 TCP/UDP`
 
 ### cod2server_rifle
 - Mapuje `./main_rifle` → `/home/cod2/main`
 - Načítá `rifle_mp.cfg`
 - Obsahuje `zzz_rifle_mod.iwd` - rifle menu pro všechny týmy, cross-team zbraně, bez granátů a pistolí
-- Port 28977 TCP/UDP
+- Port `28977 TCP/UDP`
 
 ### cod2_dl (download server)
 - Nginx servíruje `.iwd` soubory pro rychlé stahování
 - `/dl/default/main/*.iwd` → `./main`
 - `/dl/rifle/main/*.iwd` → `./main_rifle`
-- Port 28980 TCP
-- Povoleny pouze GET/HEAD requesty, pouze `.iwd` soubory, rate limiting
+- Port `28980 TCP`
+- Povoleny pouze `GET/HEAD` requesty, pouze `.iwd` soubory, rate limiting
 
 ## Struktura repozitáře
 
@@ -186,7 +186,7 @@ make logs
 
 ## Jak funguje CoD2x
 
-CoD2x je načtena přes `LD_PRELOAD` - před spuštěním `cod2_lnxded` se načte `libCoD2x.so` která hookuje herní funkce a přidává nové možnosti (vyšší tickrate, HWID bany, opravy bugů). Hráči s CoD2x klientem získají plnou funkcionalitu, vanilla klienti (1.3) se mohou připojit také (netestováno) Ke stažení s ohledem na kompatibilitu se serverem použijte verzi pro Váš systém a postupujte podle návodu, viz [callofduty2x/CoD2x](https://github.com/callofduty2x/CoD2x).
+CoD2x je načtena přes `LD_PRELOAD` - před spuštěním `cod2_lnxded` se načte `libCoD2x.so` která hookuje herní funkce a přidává nové možnosti (vyšší tickrate, HWID bany, opravy bugů). Hráči s CoD2x klientem získají plnou funkcionalitu, vanilla klienti `(1.3)` se mohou připojit také (netestováno) Ke stažení s ohledem na kompatibilitu se serverem použijte verzi pro Váš systém a postupujte podle návodu, viz [callofduty2x/CoD2x](https://github.com/callofduty2x/CoD2x).
 
 Auto-update CoD2x je vypnut (`sv_update 0`) - aktualizace probíhá ručně přes `make update-cod2x` + `make build`.
 
@@ -201,7 +201,7 @@ Dostupné zbraně: Kar98k, Lee-Enfield, Mosin-Nagant, Kar98k Scoped, Enfield Sco
 
 ## Zabezpečení
 
-- Kontejnery běží jako neprivilegovaný uživatel `cod2` (UID 1000)
+- Kontejnery běží jako neprivilegovaný uživatel `cod2` `(UID 1000)`
 - `cap_drop: ALL` + `cap_add: NET_BIND_SERVICE` - minimální Linux capabilities
 - `no-new-privileges: true` - zákaz eskalace práv
 - Herní soubory mountovány jako `:ro` (read-only)
@@ -212,9 +212,9 @@ Dostupné zbraně: Kar98k, Lee-Enfield, Mosin-Nagant, Kar98k Scoped, Enfield Sco
 
 | Port | Protokol | Účel |
 |---|---|---|
-| 28976 | TCP/UDP | Základní herní server |
-| 28977 | TCP/UDP | Rifle herní server |
-| 28980 | TCP | Download server (wwwDownload) |
+| `28976` | `TCP/UDP` | Základní herní server |
+| `28977` | `TCP/UDP` | Rifle herní server |
+| `28980` | `TCP` | Download server (wwwDownload) |
 
 ## Aktualizace
 
