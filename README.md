@@ -186,7 +186,7 @@ make logs
 
 ## Jak funguje CoD2x
 
-CoD2x je načtena přes `LD_PRELOAD` - před spuštěním `cod2_lnxded` se načte `libCoD2x.so` která hookuje herní funkce a přidává nové možnosti (vyšší tickrate, HWID bany, opravy bugů). Hráči s CoD2x klientem získají plnou funkcionalitu, vanilla klienti `(1.3)` se mohou připojit také (netestováno) Ke stažení s ohledem na kompatibilitu se serverem použijte verzi pro Váš systém a postupujte podle návodu, viz [callofduty2x/CoD2x](https://github.com/callofduty2x/CoD2x).
+CoD2x je načtena přes `LD_PRELOAD` - před spuštěním `cod2_lnxded` se načte `libCoD2x.so` která hookuje herní funkce a přidává nové možnosti (vyšší tickrate, HWID bany, opravy bugů). Hráči s CoD2x klientem získají plnou funkcionalitu, vanilla klienti `(1.3)` se mohou připojit také (netestováno). Ke stažení s ohledem na kompatibilitu se serverem použijte verzi pro Váš systém a postupujte podle návodu, viz [callofduty2x/CoD2x](https://github.com/callofduty2x/CoD2x).
 
 Auto-update CoD2x je vypnut (`sv_update 0`) - aktualizace probíhá ručně přes `make update-cod2x` + `make build`.
 
