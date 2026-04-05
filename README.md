@@ -142,7 +142,7 @@ V Docker Compose se nastavují přes `command`:
 command:
   [
     "+set", "dedicated", "1",
-    "+set", "net_port", "29876",
+    "+set", "net_port", "28976",
     "+set", "sv_cheats", "0",
     "+set", "sv_punkbuster", "0"
   ]
