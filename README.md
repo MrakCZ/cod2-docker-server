@@ -16,15 +16,15 @@ Dockerizovaný Call of Duty 2 dedicated server s podporou CoD2x knihovny a oprav
 ## Architektura
 
 ```
-┌─────────────────────────────────────────────┐
-│ Docker Compose                              │
-│                                             │
-│  cod2server        — vanilla server :28976  │
-│  cod2server_rifle  — rifle only     :28977  │
-│  cod2_dl           — download nginx :28980  │
-│                                             │
-│  Sdílená síť: cod2server_net                │
-└─────────────────────────────────────────────┘
+┌──────────────────────────────────────────────┐
+│ Docker Compose                               │
+│                                              │
+│  cod2server        — základní server :28976  │
+│  cod2server_rifle  — rifle only      :28977  │
+│  cod2_dl           — download nginx  :28980  │
+│                                              │
+│  Sdílená síť: cod2server_net                 │
+└──────────────────────────────────────────────┘
 ```
 
 ### cod2server (základní)
@@ -52,11 +52,11 @@ cod2-docker-server/
 ├── bin/
 │   ├── cod2_lnxded_1_3_nodelay_va_loc   ← staženo přes make update-bin
 │   └── libCoD2x.so                       ← staženo přes make update-cod2x
-├── main/                                 ← herní soubory vanilla serveru
+├── main/                                 ← herní soubory základního serveru
 │   ├── iw_00.iwd ... iw_15.iwd          ← z originální hry (nedodávány)
 │   ├── localized_english_iw*.iwd        ← z originální hry (nedodávány)
 │   ├── zpam_maps_*.iwd                  ← staženo přes make update-zpam-maps
-│   ├── server.cfg                        ← konfigurace vanilla serveru
+│   ├── server.cfg                        ← konfigurace základního serveru
 │   └── ...
 ├── main_rifle/                           ← herní soubory rifle serveru
 │   ├── iw_00.iwd ... iw_15.iwd          ← symlinky nebo kopie z main/
@@ -181,7 +181,7 @@ make logs
 | `make down` | Zastaví všechny kontejnery |
 | `make restart` | Restart všech kontejnerů |
 | `make logs` | Zobrazí logy všech kontejnerů |
-| `make shell` | Shell do vanilla serveru |
+| `make shell` | Shell do základního serveru |
 | `make shell-rifle` | Shell do rifle serveru |
 
 ## Jak funguje CoD2x
