@@ -48,7 +48,7 @@ Dockerizovaný Call of Duty 2 dedicated server s podporou CoD2x knihovny a oprav
 ## Struktura repozitáře
 
 ```
-cod2-build/
+cod2-docker-server/
 ├── bin/
 │   ├── cod2_lnxded_1_3_nodelay_va_loc   ← staženo přes make update-bin
 │   └── libCoD2x.so                       ← staženo přes make update-cod2x
