@@ -14,7 +14,7 @@ services:
       - "28976:28976/tcp"
       - "28976:28976/udp"
     volumes:
-      - ./main:/home/cod2/main:ro
+      - ./main:/home/cod2/main
     extra_hosts:
       - "cod2master.activision.com:0.0.0.0"
       - "master.cod2x.me:0.0.0.0"
@@ -55,7 +55,7 @@ services:
       - "28977:28977/tcp"
       - "28977:28977/udp"
     volumes:
-      - ./main_rifle:/home/cod2/main:ro
+      - ./main_rifle:/home/cod2/main
     extra_hosts:
       - "cod2master.activision.com:0.0.0.0"
       - "master.cod2x.me:0.0.0.0"
