@@ -5,6 +5,11 @@ networks:
 
 services:
   cod2_server:
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-files: "3"
     build: .
     container_name: cod2server
     restart: unless-stopped
@@ -46,6 +51,11 @@ services:
           memory: 256M
 
   cod2_server_rifle:
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-files: "3"
     build: .
     container_name: cod2server_rifle
     restart: unless-stopped
@@ -87,6 +97,17 @@ services:
           memory: 256M
 
   cod2_dl:
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-files: "3"
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1/health"]
+      interval: 30s
+      timeout: 5s
+      start_period: 10s
+      retries: 3
     container_name: cod2_dl
     image: nginx:alpine
     restart: unless-stopped
