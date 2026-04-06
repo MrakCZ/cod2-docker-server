@@ -9,7 +9,7 @@ services:
       driver: "json-file"
       options:
         max-size: "10m"
-        max-files: "3"
+        max-file: "3"
     build: .
     container_name: cod2server
     restart: unless-stopped
@@ -55,7 +55,7 @@ services:
       driver: "json-file"
       options:
         max-size: "10m"
-        max-files: "3"
+        max-file: "3"
     build: .
     container_name: cod2server_rifle
     restart: unless-stopped
@@ -101,7 +101,7 @@ services:
       driver: "json-file"
       options:
         max-size: "10m"
-        max-files: "3"
+        max-file: "3"
     healthcheck:
       test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1/health"]
       interval: 30s
