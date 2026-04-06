@@ -12,7 +12,7 @@ RUN dpkg --add-architecture i386 && \
 FROM alpine:3.22
 
 LABEL org.opencontainers.image.title="CoD2 Server"
-LABEL org.opencontainers.image.description="Malý Call of duty 2 (v1.3) server v docker kontejneru - včetně knihovny libcod2x (v1.4.x) a opravených map ze zpam4. Vlastní malý rifle only mód."
+LABEL org.opencontainers.image.description="Malý Call of duty 2 (v1.3) server v docker kontejneru - včetně knihovny libcod2x (v1.4.x) a opravených map ze zpam3. Vlastní malý rifle only mód."
 LABEL org.opencontainers.image.documentation="https://github.com/MrakCZ/cod2-docker-server/blob/main/README.md"
 LABEL org.opencontainers.image.authors="MrakCZ"
 LABEL org.opencontainers.image.url="https://github.com/MrakCZ/cod2-docker-server"
@@ -48,8 +48,8 @@ RUN mkdir -p /home/cod2/.callofduty2/main/ && \
     ln -sf /dev/stdout /home/cod2/.callofduty2/main/games_mp.log && \
     chown -R cod2:cod2 /home/cod2/.callofduty2
 
-HEALTHCHECK --interval=5s --timeout=1s --start-period=5s --retries=3 \
-    CMD pgrep -x cod2_lnxded > /dev/null && \
+HEALTHCHECK --interval=30s --timeout=5s --start-period=30s --retries=3 \
+    CMD pgrep cod2_lnxded > /dev/null && \
     test -e /home/cod2/.callofduty2/main/games_mp.log || exit 1
 
 USER cod2
