@@ -1,6 +1,6 @@
 # CoD2 Dedicated Server
 
-Dockerizovaný Call of Duty 2 dedicated server s podporou CoD2x knihovny a opravenými mapami od eyza. Obsahuje dva oddělené servery - základní server a rifle-only server - společně se serverem pro rychlé stahování herních souborů a map. Všem uvedeným ve zdrojích děkuji za skvělou práci, která zlepšuje herní zážitek! 
+Dockerizovaný Call of Duty 2 dedicated server s podporou CoD2x knihovny a opravenými mapami od eyza. Obsahuje dva oddělené servery - základní server a rifle-only server - společně se serverem pro rychlé stahování herních souborů a map. Přístup k master serverům je blokovaný pro použití serveru čistě mezi přáteli, kterým pošlete adresu pro připojení. Všem uvedeným ve zdrojích děkuji za skvělou práci, která zlepšuje herní zážitek! 
 
 ## Co je použito
 
