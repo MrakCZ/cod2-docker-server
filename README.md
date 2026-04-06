@@ -99,20 +99,16 @@ Stáhne:
 
 ### 3. Přidání herních souborů
 
-Zkopíruj originální `.iwd` soubory z CoD2 instalace do `main/`:
+Zkopíruj originální `.iwd` soubory z CoD2 instalace do `main/` a `main_rifle/`:
 
 ```bash
 cp /cesta/k/hre/main/iw_*.iwd main/
+cp /cesta/k/hre/main/iw_*.iwd main_rifle/
 cp /cesta/k/hre/main/localized_english_iw*.iwd main/
+cp /cesta/k/hre/main/localized_english_iw*.iwd main_rifle/
 ```
 
-Pro rifle server zkopíruj stejné soubory do `main_rifle/` (nebo použij symlinky):
-
-```bash
-for f in main/iw_*.iwd main/localized_english_iw*.iwd; do
-    ln -sf "$(pwd)/$f" "main_rifle/$(basename $f)"
-done
-```
+V případě použití dalších komunitních map, než uvedené v tomto návodu, nakopírujte potřebné `*.iwd` soubory do `main/` i `main_rifle/`.
 
 ### 4. Konfigurace serverů
 
